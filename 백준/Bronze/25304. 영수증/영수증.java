@@ -9,18 +9,21 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st; 
+		StringTokenizer st = new StringTokenizer(br.readLine());
 		
-		
-        X = Integer.parseInt(br.readLine());
-        N = Integer.parseInt(br.readLine());
+        X = Integer.parseInt(st.nextToken());
+        st = new StringTokenizer(br.readLine());
+        N = Integer.parseInt(st.nextToken());
 
         int total = 0;
         
         for(int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
             
-            total += Integer.parseInt(st.nextToken()) * Integer.parseInt(st.nextToken());
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            
+            total += a * b;
         }
         if(X == total) System.out.println("Yes");
         else System.out.println("No");
