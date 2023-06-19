@@ -4,31 +4,27 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-	static int N;
+        int N = Integer.parseInt(st.nextToken());
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
+        int sum = 0;
+        int max = 0;
 
-		N = Integer.parseInt(st.nextToken());
-		int sum = 0, max = 0;
+        int arr[] = new int[N];
 
-		int[] arr = new int[N];
+        st = new StringTokenizer(br.readLine());
 
-		st = new StringTokenizer(br.readLine());
+        for(int i=0; i<N; i++){
+            arr[i] = Integer.parseInt(st.nextToken());
+            sum += arr[i];
+            if(max < arr[i]){
+                max = arr[i];
+            }
 
-		for (int i = 0; i < N; i++) {
-			arr[i] = Integer.parseInt(st.nextToken());
-			sum += arr[i];
-			if (max < arr[i]) {
-				max = arr[i];
-			}
-
-		}
-
-		System.out.println((double)sum*100/max/N);
-	}
-
+        }
+        System.out.println((double)sum*100/max/N);
+    }
 }
-
